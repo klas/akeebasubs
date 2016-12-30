@@ -20,9 +20,9 @@ class plgAkpaymentPaypal extends AkpaymentBase
 	 * As of October 20th, 2016 PayPal recommends using the ipnpb.paypal.com domain name. See
 	 * https://www.paypal.com/au/webapps/mpp/ipn-verification-https
 	 */
-	const IPNPostbackDomain = 'www.paypal.com';
+	//const IPNPostbackDomain = 'www.paypal.com';
 
-	// const IPNPostbackDomain = 'ipnpb.paypal.com';
+	const IPNPostbackDomain = 'ipnpb.paypal.com';
 
 	public function __construct(&$subject, $config = array())
 	{
@@ -502,7 +502,7 @@ class plgAkpaymentPaypal extends AkpaymentBase
 		 * In some PayPal documentation I've seen that they append /cgi-bin/webscr but I've been simply posting to the
 		 * root domain for years without a problem. WTF?
 		 */
-		// $url = 'https://' . $hostname . '/cgi-bin/webscr';
+		$url = 'https://' . $hostname . '/cgi-bin/webscr';
 
 		$newData = array(
 			'cmd' => '_notify-validate'
